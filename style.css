@@ -1,12 +1,12 @@
 @font-face {
     font-family: 'Pirate';
-    src: url('/Fonts/Pirate\ Scroll.otf') format('truetype');
+    src: url('./Fonts/Pirate\ Scroll.otf') format('truetype');
     font-weight: normal;
 }
 
 @font-face {
     font-family: 'Marketfresh';
-    src: url('/Fonts/Market\ Fresh\ Inline\ Bold\ ALL\ CAPS.ttf') format('truetype');
+    src: url('./Fonts/Market\ Fresh\ Inline\ Bold\ ALL\ CAPS.ttf') format('truetype');
     font-weight: normal;
 }
 
