@@ -20,7 +20,7 @@ body {
 h1 {
     font-size: 70px;
     font-family: 'Marketfresh';
-    margin-top: 70px;
+    margin-top: 50px;
     color: #F5E27A;
     letter-spacing: 2px;
     text-shadow: 0 0 10px #F5E27A;
@@ -34,7 +34,7 @@ h1 {
 }
 
 .slot {
-    width: 50%;
+    width: 40%;
     height: 350px;
     overflow: hidden;
     margin: auto;
@@ -93,11 +93,16 @@ ul li {
 
 .stop-btn {
     display: inline-block;
-    padding: 10px;
+    padding: 20px;
     margin: 60px 30px 40px 30px;
     background-color: #C71E27;
     border-bottom: solid 2px #646464;
     border-radius: 60px;
+}
+
+.stop-btn:hover {
+    background-color: #63d74c;
+    cursor: pointer;
 }
 
 .stop-btn:active {
@@ -112,15 +117,32 @@ ul li {
     background-color: #63d74c;
     border-radius: 40px;
     font-size: 30px;
-    margin-bottom: 80px;
+    margin-bottom: 30px;
     font-weight: bold;
     font-family: 'Pirate';
     letter-spacing: 3px;
     color: #1F1F1F;
 }
 
+#start-btn:hover {
+    cursor: pointer;
+}
+
 #start-btn:active {
     -webkit-transform: translateY(6px);
     transform: translateY(6px);
     border: none;
+}
+
+.notice {
+    background-color: white;
+    margin: auto;
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+}
+
+.notice h3 {
+    font-family: 'Pirate';
 }

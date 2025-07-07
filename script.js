@@ -1,9 +1,7 @@
 let slot_screen = document.getElementById("slot-screen");
 let reel = document.getElementsByClassName("reel");
 let reels = document.getElementsByClassName("reels");
-let stop_btn1 = document.getElementsByClassName("stop-btn1");
-let stop_btn2 = document.getElementsByClassName("stop-btn2");
-let stop_btn3 = document.getElementsByClassName("stop-btn3");
+let stop_btn = document.getElementsByClassName("stop-btn");
 let start_btn = document.getElementById("start-btn");
 
 let sec = 100;              //slot reel rotation speed (runs per second)
@@ -30,22 +28,8 @@ let slot = {
     },
 
     //stop button click event
-    stop1:function() {
-        stopReelFlag[0] = true
-        if (stopReelFlag[0] && stopReelFlag[1] && stopReelFlag[2]){
-            start_btn.removeAttribute("disabled");
-        }
-    },
-
-    stop2:function() {
-        stopReelFlag[1] = true
-        if (stopReelFlag[0] && stopReelFlag[1] && stopReelFlag[2]){
-            start_btn.removeAttribute("disabled");
-        }
-    },
-
-    stop3:function() {
-        stopReelFlag[2] = true
+    stop:function(i) {
+        stopReelFlag[i] = true
         if (stopReelFlag[0] && stopReelFlag[1] && stopReelFlag[2]){
             start_btn.removeAttribute("disabled");
         }
@@ -86,48 +70,19 @@ let slot = {
     },
 };
 
-// window.onload = function() {
-//     slot.init();
-//     slot.resetLocationInfo();
-//     start_btn.addEventListener("click",function(e){
-//         e.target.setAttribute("disabled",true)
-//         slot.start();
-//         for(let i =0;i<stop_btn.length;i++){
-//             stop_btn[i].removeAttribute("disabled");
-//         }
-//     });
-//     for(let i=0;i<stop_btn.length;i++){
-//         stop_btn[i].addEventListener("click",function(e){
-//             slot.stop(e.target.getAttribute("data-val"));
-//         })
-//     }
-// };
-
-document.body.onkeyup = (e) => {
+window.onload = function() {
     slot.init();
     slot.resetLocationInfo();
-    if (e.keyCode == 32) {
+    start_btn.addEventListener("click",function(e){
         e.target.setAttribute("disabled",true)
         slot.start();
         for(let i =0;i<stop_btn.length;i++){
-            stop_btn1[0].removeAttribute("disabled");
-            stop_btn2[1].removeAttribute("disabled");
-            stop_btn3[2].removeAttribute("disabled");
+            stop_btn[i].removeAttribute("disabled");
         }
-    };
-    for(let i=0;i<stop_btn1.length;i++){
-        if (e.keyCode == 97) {
-            slot.stop1(e.target.getAttribute("data-val"));
-        }
-    }
-    for(let i=0;i<stop_btn2.length;i++){
-        if (e.keyCode == 98) {
-            slot.stop2(e.target.getAttribute("data-val"));
-        }
-    }
-    for(let i=0;i<stop_btn3.length;i++){
-        if (e.keyCode == 99) {
-            slot.stop3(e.target.getAttribute("data-val"));
-        }
+    });
+    for(let i=0;i<stop_btn.length;i++){
+        stop_btn[i].addEventListener("click",function(e){
+            slot.stop(e.target.getAttribute("data-val"));
+        })
     }
 };
