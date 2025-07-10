@@ -42,7 +42,7 @@ let slot = {
         slotReelItemHeight = reel[0].offsetHeight;
         slotReelStartHeight = -slotReelsHeight;
         slotReelStartHeight += slotFrameHeight
-        -(slotFrameHeight /2) + slotReelItemHeight * 3 / 2;
+        -(slotFrameHeight /2) + slotReelItemHeight * 4 / 3;
         for(let i = 0; i < reels>length;i++) {
             reels[i].style.top = string(slotReelStartHeight) + "px";
         }
